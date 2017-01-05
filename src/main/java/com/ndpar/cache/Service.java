@@ -1,4 +1,4 @@
-package com.ndpar;
+package com.ndpar.cache;
 
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 @Component
-public class Manager {
+public class Service {
 
     @Cacheable("keys")
     public String get(String key) {

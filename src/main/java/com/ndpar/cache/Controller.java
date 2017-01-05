@@ -1,26 +1,27 @@
-package com.ndpar;
+package com.ndpar.cache;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/cache")
 public class Controller {
 
     @Autowired
-    private Manager manager;
+    private Service service;
 
     @GetMapping("/{key}")
     public String getValue(@PathVariable String key) {
-        return manager.get(key);
+        return service.get(key);
     }
 
     @PutMapping("/{key}/{value}")
     public void putValue(@PathVariable String key, @PathVariable String value) {
-        manager.put(key, value);
+        service.put(key, value);
     }
 
     @DeleteMapping("/{key}")
     public void deleteValue(@PathVariable String key) {
-        manager.remove(key);
+        service.remove(key);
     }
 }
