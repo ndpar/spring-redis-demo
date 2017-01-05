@@ -1,0 +1,9 @@
+applications:
+- name: spring-redis
+  memory: 1G
+  random-route: true
+  path: target/spring-redis.jar
+  services:
+  - redis
+  env:
+    spring.profiles.active: redis
