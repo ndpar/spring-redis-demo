@@ -12,7 +12,7 @@ public class Controller {
     private Manager manager;
 
     @GetMapping("/{key}")
-    public String callResourceServer(@PathVariable String key) {
+    public String getValue(@PathVariable String key) {
         return manager.get(key);
     }
 }
